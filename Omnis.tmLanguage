@@ -39,14 +39,6 @@
 			<key>include</key>
 			<string>#methods</string>
 		</dict>
-		<dict>
-			<key>comment</key>
-			<string>Variables like $PARAM1, $TM_SELECTION</string>
-			<key>match</key>
-			<string>\$([A-Za-z][A-Za-z0-9_]+)</string>
-			<key>name</key>
-			<string>meta.method-call.omh</string>
-		</dict>
 	</array>
 	<key>repository</key>
 	<dict>
@@ -88,7 +80,7 @@
 				</dict>
 				<dict>
 					<key>match</key>
-					<string>\#(NULL|SHIFT)|(\bk[A-Z]{1}[A-Za-z0-9_]+)</string>
+					<string>\#[A-Za-z0-9_]+|(\bk[A-Z]{1}[A-Za-z0-9_]+)</string>
 					<key>name</key>
 					<string>constant.language.omh</string>
 				</dict>
@@ -206,9 +198,28 @@
 			<array>
 				<dict>
 					<key>match</key>
-					<string>\#[A-Z0-9]+|\$c.*?\.</string>
+					<!--<string>\$c([A-Za-z]+)</string>-->
+					<string>\$cols|\$objs|\$windows|\$libs|\$root|\$cclass|\$cdata|\$cinst|\$cfield|\$clib|\$cmethod|\$cobj|\$cparmcount|\$crecipient|\$ctarget|\$ctask|\$cwind|\$topwind</string>
 					<key>name</key>
 					<string>variable.language.omh</string>
+				</dict>
+			</array>
+		</dict>
+		<key>methods</key>
+		<dict>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>match</key>
+					<string>\$([A-Za-z][A-Za-z0-9_]+)</string>
+					<key>name</key>
+					<string>entity.name.function</string>
+				</dict>
+				<dict>
+					<key>match</key>
+					<string>\b(con|eval|pick|con|len|upp|not|isclear|abs)\b</string>
+					<key>name</key>
+					<string>entity.name.function</string>
 				</dict>
 			</array>
 		</dict>
