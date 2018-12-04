@@ -198,7 +198,6 @@
 			<array>
 				<dict>
 					<key>match</key>
-					<!--<string>\$c([A-Za-z]+)</string>-->
 					<string>\$cols|\$objs|\$windows|\$libs|\$root|\$cclass|\$cdata|\$cinst|\$cfield|\$clib|\$cmethod|\$cobj|\$cparmcount|\$crecipient|\$ctarget|\$ctask|\$cwind|\$topwind</string>
 					<key>name</key>
 					<string>variable.language.omh</string>
@@ -217,7 +216,7 @@
 				</dict>
 				<dict>
 					<key>match</key>
-					<string>\b(con|eval|pick|con|len|upp|not|isclear|abs)\b</string>
+					<string>\b(con|eval|pick|con|len|upp|not|isclear|abs|jst|left)\b</string>
 					<key>name</key>
 					<string>entity.name.function</string>
 				</dict>
